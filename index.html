@@ -7,6 +7,9 @@
     <title >Rifki Konversi Suhu</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- ini link css -->
+
+    <!-- box icons -->
+
 </head>
 
 <body>
@@ -97,7 +100,7 @@
     <!-- ini link javascript -->
     <!-- <script> src="js/script.js"</script> -->
     <script>
-        function konversi(){
+    function konversi(){
             var celsius = document.getElementById('number').value
             var fahrenheit = (celsius * 9 / 5) + 32;
             document.getElementById('fahrenheit').value = fahrenheit
@@ -105,10 +108,12 @@
 
             function resetValue(){
             document.getElementById('number').value = '';
+            document.getElementById(fahrenheit).innerHTML = ''
+
         }
 
         function reverse(){
-            document.getElementById('celciusText').innerHTML = 'fah'
+            document.getElementById('celciusText').innerHTML = 'fahrenheit'
             
         }
     </script>
