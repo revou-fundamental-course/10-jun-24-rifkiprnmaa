@@ -19,24 +19,45 @@
         <h4>Masukan suhu derajat celcius (&deg;C)</h4>
 
         <!-- Section Celcius -->
-        <section>
+        <section class="celcius-container;" style="text-align: center;">
             <header>
-                <h3>Celcius (&deg;C):</h3>
+                <h3 id="celciusText">Celcius (&deg;C):</h3>
             </header>
 
             <section>
-                <textarea></textarea>
+                <input type="number" id="number" style="resize: none;
+                background-color: #f8f8f8;
+                border-radius: 4px;
+                border: 2px solid #ccc;
+                font-size: 14px;
+                font-family: math;"></input>
+
+                <section>
+                    <button style="background-color: blue;color: white;height: 32px;border: 0px;border-radius: 4px;" class="konversi" onclick="konversi()">Konversi</button>
+                    <button style="background-color: red;
+                    color: white;
+                    height: 32px;
+                    border: 0px;
+                    border-radius: 4px;" onclick="resetValue()">Reset</button>
+                    <button style="background-color: green;
+                    color: white;
+                    height: 32px;
+                    border: 0px;
+                    border-radius: 4px;" onclick="reverse()">Reverse</button>
+                </section>
             </section>
         </section>
 
-        <!-- Section Fahrenheit -->
+        <section class="result-container " style="display: flex;
+    justify-content: space-evenly;">
+                   <!-- Section Fahrenheit -->
         <section>
             <header>
-                <h3>Fahrenheit (&deg;F):</h3>
+                <h3 id="fahrenheitText">Fahrenheit (&deg;F):</h3>
             </header>
 
             <section>
-                <textarea></textarea>
+                <input type="number" id="fahrenheit" class="fahrenheit"></input>
             </section>
         </section>
 
@@ -47,24 +68,50 @@
             </header>
 
             <section>
-                <textarea></textarea>
+                <input type="number" id ="Convertion-Calculate" class="fahrenheit"></input>
+
             </section>
+        </section> 
         </section>
-       
+
+        <hr />
+
        <!-- Section Formula/info -->
         <section>
             <header>
                 <h1>Cara Konversi dari Celcius (&deg;C) ke Fahrenheit (&deg;F):</h1>
             </header>
 
-            <hr/>
+            <p>Suhu <span style="font-size: 24px; font-style: italic; font-family: math;">S</span> dalam Derajat Fahrenheit (&deg;F) sama <span style="font-size: 24px; font-style: italic; font-family: math;">S</span> dengan suhu dalam derajat Celcius (&deg;C)</p>
+            
+            <p>
+                <span style="font-size: 24px; font-style: italic; font-family: math;">S</span><sub>(&deg;F)</sub> = (<span style="font-size: 24px; font-style: italic; font-family: math;">S</span><sub>(&deg;C)</sub>) x 1,8) + 32
+            </p>
 
-            <h4>Suhu <span>S</span> dalam Derajat Fahrenheit (&deg;F) sama dengan suhu dalam derajat Celcius (&deg;C)</h4>
+            <p>
+                <span style="font-size: 24px; font-style: italic; font-family: math;">S</span><sub>(&deg;C)</sub> = (<span style="font-size: 24px; font-style: italic; font-family: math;">S</span><sub>(&deg;F)</sub>) x 32) / 1,8
+            </p>
         </section>
     </main>
 
     <!-- ini link javascript -->
-    <script> src="js/script.js"</script>
+    <!-- <script> src="js/script.js"</script> -->
+    <script>
+        function konversi(){
+            var celsius = document.getElementById('number').value
+            var fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById('fahrenheit').value = fahrenheit
+        }
+
+            function resetValue(){
+            document.getElementById('number').value = '';
+        }
+
+        function reverse(){
+            document.getElementById('celciusText').innerHTML = 'fah'
+            
+        }
+    </script>
 </body>
 
 </html>
